@@ -1,6 +1,10 @@
 # Python
 *.py[cod]
 
+# Javascript
+bower_components/
+node_modules/
+
 # PyCharm / IntelliJ
 .idea
 *.iml
