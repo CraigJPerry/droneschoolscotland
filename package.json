@@ -1,0 +1,8 @@
+{
+  "name": "droneschoolscotland",
+  "private": true,
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-bower": "0.0.10"
+  }
+}
