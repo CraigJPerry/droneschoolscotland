@@ -18,9 +18,14 @@ gulp.task('bower', function () {
         .pipe(gulp.dest(config.bowerDir));
 });
 
-gulp.task('icons', ['bower'], function () {
+gulp.task('fontawesome-fonts', ['bower'], function () {
     return gulp.src(config.bowerDir + 'font-awesome/fonts/**.*')
         .pipe(gulp.dest(config.distDir.fonts));
+});
+
+gulp.task('fontawesome-css', ['bower'], function () {
+    return gulp.src(config.bowerDir + 'font-awesome/css/**.*')
+        .pipe(gulp.dest(config.distDir.css));
 });
 
 gulp.task('bootstrap', ['bower'], function () {
@@ -63,4 +68,4 @@ gulp.task('js', function () {
         .pipe(gulp.dest(config.distDir.js));
 });
 
-gulp.task('default', ['bower', 'icons', 'bootstrap', 'jquery', 'jquery.easing', 'index.html', 'favicon.ico', 'img', 'js', 'css']);
+gulp.task('default', ['bower', 'fontawesome-fonts', 'fontawesome-css', 'bootstrap', 'jquery', 'jquery.easing', 'index.html', 'favicon.ico', 'img', 'js', 'css']);
