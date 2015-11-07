@@ -1,3 +1,9 @@
+# Python
 *.py[cod]
+
+# PyCharm / IntelliJ
 .idea
 *.iml
+
+# Generated files
+static/
