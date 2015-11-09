@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var del = require('del');
 var bower = require('gulp-bower');
 
 var config = {
@@ -66,6 +67,20 @@ gulp.task('css', function () {
 gulp.task('js', function () {
     return gulp.src(config.clientDir + 'js/*')
         .pipe(gulp.dest(config.distDir.js));
+});
+
+gulp.task('clean', function () {
+    return del([
+        'public/**/*',
+        '!public/.gitkeep'
+    ])
+});
+
+gulp.task('clean-all', ['clean'], function () {
+    return del([
+        'node_modules',
+        'bower_components'
+    ])
 });
 
 gulp.task('default', ['bower', 'fontawesome-fonts', 'fontawesome-css', 'bootstrap', 'jquery', 'jquery.easing', 'index.html', 'favicon.ico', 'img', 'js', 'css']);
