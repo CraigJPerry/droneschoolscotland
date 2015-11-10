@@ -36,9 +36,19 @@ gulp.task('fontawesome-css', ['bower'], function () {
         .pipe(gulp.dest(config.distDir.css));
 });
 
-gulp.task('bootstrap', ['bower'], function () {
-    return gulp.src(config.bowerDir + 'bootstrap/dist/**/*')
-        .pipe(gulp.dest(config.distDir.staticRoot));
+gulp.task('bootstrap-js', ['bower'], function () {
+    return gulp.src(config.bowerDir + 'bootstrap/dist/js/*.min.js')
+        .pipe(gulp.dest(config.distDir.js));
+});
+
+gulp.task('bootstrap-fonts', ['bower'], function () {
+    return gulp.src(config.bowerDir + 'bootstrap/dist/fonts/*')
+        .pipe(gulp.dest(config.distDir.fonts));
+});
+
+gulp.task('bootstrap-css', ['bower'], function () {
+    return gulp.src(config.bowerDir + 'bootstrap/dist/css/*.min.css')
+        .pipe(gulp.dest(config.distDir.css));
 });
 
 gulp.task('jquery', ['bower'], function () {
@@ -103,11 +113,11 @@ gulp.task('clean', function () {
 // TODO: Version bump, git tag creation
 
 gulp.task('push', function (cb) {
-    exec('appcfg.py -A droneschoolscotland update dist/', function(err, stdout, stderr) {
+    exec('appcfg.py -A droneschoolscotland update dist/', function (err, stdout, stderr) {
         console.log(stdout);
         console.log(stderr);
         cb(err);
     });
 });
 
-gulp.task('default', ['bower', 'fontawesome-fonts', 'fontawesome-css', 'bootstrap', 'jquery', 'jquery.easing', 'index.html', 'favicon.ico', 'img', 'js', 'css', 'app.yaml']);
+gulp.task('default', ['bower', 'fontawesome-fonts', 'fontawesome-css', 'bootstrap-js', 'bootstrap-fonts', 'bootstrap-css', 'jquery', 'jquery.easing', 'index.html', 'favicon.ico', 'img', 'js', 'css', 'app.yaml']);
