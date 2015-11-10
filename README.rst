@@ -22,6 +22,7 @@ You'll need to install:
 * Python 2.7 installed
 * The Google App Engine SDK for Python
 * NodeJS + NPM installed
+
   * Gulp & Bower installed globally: ``npm install -g gulp bower``
   * Run ``npm install`` in the project root directory to download the project dependencies into the project directory.
   * Run ``gulp clean`` to purge the client distribution
