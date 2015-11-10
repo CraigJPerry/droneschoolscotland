@@ -32,7 +32,7 @@ gulp.task('fontawesome-fonts', ['bower'], function () {
 });
 
 gulp.task('fontawesome-css', ['bower'], function () {
-    return gulp.src(config.bowerDir + 'font-awesome/css/**.*')
+    return gulp.src(config.bowerDir + 'font-awesome/css/font-awesome.min.css')
         .pipe(gulp.dest(config.distDir.css));
 });
 
