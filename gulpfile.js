@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var del = require('del');
 var bower = require('gulp-bower');
+var exec = require('child_process').exec;
 
 var config = {
     bowerDir: 'bower_components/',
@@ -72,6 +73,7 @@ gulp.task('js', function () {
 });
 
 gulp.task('app.yaml', function () {
+    // TODO: Inject version number, prefix with test- if not on the git master branch so a test version can be deployed
     return gulp.src(config.serverDir + 'app.yaml')
         .pipe(gulp.dest(config.distDir.root));
 });
@@ -81,6 +83,16 @@ gulp.task('clean', function () {
         'dist/**/*',
         '!dist/.gitkeep'
     ])
+});
+
+// TODO: Version bump, git tag creation
+
+gulp.task('push', function (cb) {
+    exec('appcfg.py -A droneschoolscotland update dist/', function(err, stdout, stderr) {
+        console.log(stdout);
+        console.log(stderr);
+        cb(err);
+    });
 });
 
 gulp.task('default', ['bower', 'fontawesome-fonts', 'fontawesome-css', 'bootstrap', 'jquery', 'jquery.easing', 'index.html', 'favicon.ico', 'img', 'js', 'css', 'app.yaml']);
