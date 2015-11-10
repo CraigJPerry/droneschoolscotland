@@ -52,12 +52,12 @@ gulp.task('bootstrap-css', ['bower'], function () {
 });
 
 gulp.task('jquery', ['bower'], function () {
-    return gulp.src(config.bowerDir + 'jquery/dist/**.*')
+    return gulp.src(config.bowerDir + 'jquery/dist/jquery.min.js')
         .pipe(gulp.dest(config.distDir.js));
 });
 
 gulp.task('jquery.easing', ['bower'], function () {
-    return gulp.src(config.bowerDir + 'jquery.easing/js/**.*')
+    return gulp.src(config.bowerDir + 'jquery.easing/js/jquery.easing.min.js')
         .pipe(gulp.dest(config.distDir.js));
 });
 
