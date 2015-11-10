@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var del = require('del');
 var bower = require('gulp-bower');
 var less = require('gulp-less');
+var sourcemaps = require('gulp-sourcemaps');
 var exec = require('child_process').exec;
 
 var config = {
@@ -65,7 +66,9 @@ gulp.task('img', function () {
 
 gulp.task('css', function () {
     return gulp.src(config.clientDir + 'less/**/*.less')
+        .pipe(sourcemaps.init())
         .pipe(less())
+        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(config.distDir.css));
 });
 
