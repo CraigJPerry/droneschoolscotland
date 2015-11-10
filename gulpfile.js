@@ -3,6 +3,8 @@ var del = require('del');
 var bower = require('gulp-bower');
 var less = require('gulp-less');
 var sourcemaps = require('gulp-sourcemaps');
+var uglify = require('gulp-uglify');
+var rename = require('gulp-rename');
 var exec = require('child_process').exec;
 
 var config = {
@@ -73,7 +75,15 @@ gulp.task('css', function () {
 });
 
 gulp.task('js', function () {
-    return gulp.src(config.clientDir + 'js/*')
+    return gulp.src(config.clientDir + 'js/**/*.js')
+        .pipe(sourcemaps.init())
+        .pipe(uglify())
+        .pipe(rename(function (path) {
+            if (path.extname === '.js') {
+                path.basename += '.min';
+            }
+        }))
+        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(config.distDir.js));
 });
 
