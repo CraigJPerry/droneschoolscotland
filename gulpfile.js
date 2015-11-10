@@ -5,13 +5,15 @@ var bower = require('gulp-bower');
 var config = {
     bowerDir: 'bower_components/',
     distDir: {
-        root: 'public/',
-        js: 'public/js/',
-        css: 'public/css/',
-        fonts: 'public/fonts/',
-        img: 'public/img/'
+        root: 'dist/',
+        staticRoot: 'dist/static/',
+        js: 'dist/static/js/',
+        css: 'dist/static/css/',
+        fonts: 'dist/static/fonts/',
+        img: 'dist/static/img/'
     },
-    clientDir: 'client/'
+    clientDir: 'client/',
+    serverDir: 'server/'
 };
 
 gulp.task('bower', function () {
@@ -31,7 +33,7 @@ gulp.task('fontawesome-css', ['bower'], function () {
 
 gulp.task('bootstrap', ['bower'], function () {
     return gulp.src(config.bowerDir + 'bootstrap/dist/**/*')
-        .pipe(gulp.dest(config.distDir.root));
+        .pipe(gulp.dest(config.distDir.staticRoot));
 });
 
 gulp.task('jquery', ['bower'], function () {
@@ -46,12 +48,12 @@ gulp.task('jquery.easing', ['bower'], function () {
 
 gulp.task('index.html', function () {
     return gulp.src(config.clientDir + 'index.html')
-        .pipe(gulp.dest(config.distDir.root));
+        .pipe(gulp.dest(config.distDir.staticRoot));
 });
 
 gulp.task('favicon.ico', function () {
     return gulp.src(config.clientDir + 'favicon.ico')
-        .pipe(gulp.dest(config.distDir.root));
+        .pipe(gulp.dest(config.distDir.staticRoot));
 });
 
 gulp.task('img', function () {
@@ -69,18 +71,16 @@ gulp.task('js', function () {
         .pipe(gulp.dest(config.distDir.js));
 });
 
+gulp.task('app.yaml', function () {
+    return gulp.src(config.serverDir + 'app.yaml')
+        .pipe(gulp.dest(config.distDir.root));
+});
+
 gulp.task('clean', function () {
     return del([
-        'public/**/*',
-        '!public/.gitkeep'
+        'dist/**/*',
+        '!dist/.gitkeep'
     ])
 });
 
-gulp.task('clean-all', ['clean'], function () {
-    return del([
-        'node_modules',
-        'bower_components'
-    ])
-});
-
-gulp.task('default', ['bower', 'fontawesome-fonts', 'fontawesome-css', 'bootstrap', 'jquery', 'jquery.easing', 'index.html', 'favicon.ico', 'img', 'js', 'css']);
+gulp.task('default', ['bower', 'fontawesome-fonts', 'fontawesome-css', 'bootstrap', 'jquery', 'jquery.easing', 'index.html', 'favicon.ico', 'img', 'js', 'css', 'app.yaml']);

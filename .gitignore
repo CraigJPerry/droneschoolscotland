@@ -10,4 +10,4 @@ node_modules/
 *.iml
 
 # Generated files
-public/
+dist/
