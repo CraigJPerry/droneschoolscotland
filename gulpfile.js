@@ -3,6 +3,7 @@ var del = require('del');
 var bower = require('gulp-bower');
 var less = require('gulp-less');
 var sourcemaps = require('gulp-sourcemaps');
+var minifyCSS = require('gulp-minify-css');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var exec = require('child_process').exec;
@@ -76,10 +77,16 @@ gulp.task('img', function () {
         .pipe(gulp.dest(config.distDir.img));
 });
 
+function minifiedName(path) {
+    path.basename += '.min'
+};
+
 gulp.task('css', function () {
-    return gulp.src(config.clientDir + 'less/**/*.less')
+    return gulp.src(config.clientDir + 'less/grayscale.less')
         .pipe(sourcemaps.init())
         .pipe(less())
+        .pipe(minifyCSS())
+        .pipe(rename(minifiedName))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(config.distDir.css));
 });
@@ -88,11 +95,7 @@ gulp.task('js', function () {
     return gulp.src(config.clientDir + 'js/**/*.js')
         .pipe(sourcemaps.init())
         .pipe(uglify())
-        .pipe(rename(function (path) {
-            if (path.extname === '.js') {
-                path.basename += '.min';
-            }
-        }))
+        .pipe(rename(minifiedName))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(config.distDir.js));
 });
