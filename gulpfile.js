@@ -38,7 +38,7 @@ gulp.task('fontawesome-css', ['bower'], function () {
 });
 
 gulp.task('bootstrap-js', ['bower'], function () {
-    return gulp.src(config.bowerDir + 'bootstrap/dist/js/*.min.js')
+    return gulp.src(config.bowerDir + 'bootstrap/dist/js/bootstrap.min.js')
         .pipe(gulp.dest(config.distDir.js));
 });
 
@@ -48,7 +48,7 @@ gulp.task('bootstrap-fonts', ['bower'], function () {
 });
 
 gulp.task('bootstrap-css', ['bower'], function () {
-    return gulp.src(config.bowerDir + 'bootstrap/dist/css/*.min.css')
+    return gulp.src(config.bowerDir + 'bootstrap/dist/css/bootstrap.min.css')
         .pipe(gulp.dest(config.distDir.css));
 });
 
