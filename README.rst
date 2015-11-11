@@ -30,3 +30,9 @@ You'll need to install:
   * Run ``gulp push`` to deploy to Google App Engine to production
 
 Launch the Google App Engine dev appserver to view the application.
+
+
+Task Tracking
+-------------
+
+Tasks & milestones are being tracked via https://huboard.com/CraigJPerry/droneschoolscotland/
