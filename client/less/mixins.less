@@ -1,1 +1,17 @@
-//  Mixins
+.Breakpoint (@point; @content) when (@point = @medium) {
+  @media (min-width: 30em) {
+  @content();
+  }
+}
+
+.Breakpoint (@point; @content) when (@point =  @large) {
+  @media (min-width: 50em) {
+  @content();
+  }
+}
+
+.Breakpoint (@point; @content) when (default()) {
+  @media (min-width: @point) {
+  @content();
+  }
+}

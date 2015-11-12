@@ -33,124 +33,181 @@
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+<!-- Navigation -->
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand page-scroll" href="#page-top">
+                <i class="fa fa-play-circle"></i> <span class="light">Fly</span> Today
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+            <ul class="nav navbar-nav">
+                <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                <li class="hidden">
+                    <a href="#page-top"></a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#about">About</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#download">Download</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<!-- Intro Header -->
+<header class="intro">
+    <div class="intro-body">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                    <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top">
-                    <i class="fa fa-play-circle"></i>  <span class="light">Fly</span> Today
-                </a>
-            </div>
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h1 class="brand-heading">Drone School</h1>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-                <ul class="nav navbar-nav">
-                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#about">About</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#download">Download</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
-    <!-- Intro Header -->
-    <header class="intro">
-        <div class="intro-body">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <h1 class="brand-heading">Drone School</h1>
-                        <p class="intro-text">Learn to fly cutting edge drone technology, today.<br>Scotland's only Drone Flight school</p>
-                        <a href="#about" class="btn btn-circle page-scroll">
-                            <i class="fa fa-angle-double-down animated"></i>
-                        </a>
-                    </div>
+                    <p class="intro-text">Learn to fly cutting edge drone technology, today.<br>Scotland's only Drone
+                        Flight school</p>
+                    <a href="#about" class="btn btn-circle page-scroll">
+                        <i class="fa fa-angle-double-down animated"></i>
+                    </a>
                 </div>
             </div>
         </div>
-    </header>
+    </div>
+</header>
 
-    <!-- About Section -->
-    <section id="about" class="container content-section text-center">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2>About Drone School Scotland</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, at aut, blanditiis consequuntur delectus, deserunt dolorum ducimus itaque iusto mollitia nisi non nulla obcaecati placeat praesentium qui quod tempore vero.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aspernatur assumenda consequuntur ea eum fuga fugit hic id impedit nemo optio pariatur, praesentium quia repellendus sequi tempora tenetur vel voluptates!</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet commodi corporis dolore dolorem hic incidunt iure maiores necessitatibus neque officiis quos sed, sunt temporibus totam vel voluptate voluptatibus voluptatum?</p>
-            </div>
+<!-- About Section -->
+<section id="about" class="container content-section text-center">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <h2>About Drone School Scotland</h2>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, at aut, blanditiis consequuntur
+                delectus, deserunt dolorum ducimus itaque iusto mollitia nisi non nulla obcaecati placeat praesentium
+                qui quod tempore vero.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aspernatur assumenda consequuntur ea
+                eum fuga fugit hic id impedit nemo optio pariatur, praesentium quia repellendus sequi tempora tenetur
+                vel voluptates!</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet commodi corporis dolore dolorem
+                hic incidunt iure maiores necessitatibus neque officiis quos sed, sunt temporibus totam vel voluptate
+                voluptatibus voluptatum?</p>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Download Section -->
-    <section id="download" class="content-section text-center">
-        <div class="download-section">
-            <div class="container">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <h2>Sign Up</h2>
-                    <p>Book your first lesson online today.</p>
-                    <a href="#" class="btn btn-default btn-lg">Reserve Your Place</a>
+<!-- Download Section -->
+<section id="download" class="content-section text-center">
+    <div class="download-section">
+        <div class="container">
+            <div class="col-md-3 col-md-offset-2">
+                <div class="promo first">
+                    <h4>Taster</h4>
+                    <ul class="features">
+                        <li class="brief">Fly Any 3 Drones</li>
+                        <li class="price">£69</span></li>
+                        <li>Choose from 6 drones</li>
+                        <li>Up to 45 mins flight time</li>
+                        <li>Excellent Christmas gift</li>
+                        <li class="buy">
+                            <button>Last Few!</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="promo second scale">
+                    <h4>Training</h4>
+                    <ul class="features">
+                        <li class="brief">CAA Flight School</li>
+                        <li class="price">£189</li>
+                        <li>Comprehensive flight school</li>
+                        <li>Prepare for SU(S)A licence</li>
+                        <li>Discounted Insurance</li>
+                        <li class="buy">
+                            <button>Buy Now</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="promo third">
+                    <h4>Film School</h4>
+                    <ul class="features">
+                        <li class="brief">Learn film making with drones</li>
+                        <li class="price">£499</li>
+                        <li>Some great feature</li>
+                        <li>Another super feature</li>
+                        <li>And more...</li>
+                        <li class="buy">
+                            <button>Buy Now</button>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+    </div>
+</section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="container content-section text-center">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2>Contact Drone School Scotland</h2>
-                <p>Feel free to email us to provide some feedback, or to just say hello!</p>
-                <p><a href="mailto:feedback@droneschoolscotland.com">feedback@droneschoolscotland.com</a>
-                </p>
-                <ul class="list-inline banner-social-buttons">
-                    <li>
-                        <a href="#" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                    </li>
-                    <li>
-                        <a href="#" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                    </li>
-                    <li>
-                        <a href="#" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
-                    </li>
-                </ul>
-            </div>
+<!-- Contact Section -->
+<section id="contact" class="container content-section text-center">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <h2>Contact Drone School Scotland</h2>
+
+            <p>Feel free to email us to provide some feedback, or to just say hello!</p>
+
+            <p><a href="mailto:feedback@droneschoolscotland.com">feedback@droneschoolscotland.com</a>
+            </p>
+            <ul class="list-inline banner-social-buttons">
+                <li>
+                    <a href="#" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span
+                            class="network-name">Twitter</span></a>
+                </li>
+                <li>
+                    <a href="#" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span
+                            class="network-name">Github</span></a>
+                </li>
+                <li>
+                    <a href="#" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span
+                            class="network-name">Google+</span></a>
+                </li>
+            </ul>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container text-center">
-            <p>Copyright &copy; Drone School Scotland 2015</p>
-        </div>
-    </footer>
+<!-- Footer -->
+<footer>
+    <div class="container text-center">
+        <p>Copyright &copy; Drone School Scotland 2015</p>
+    </div>
+</footer>
 
-    <!-- jQuery -->
-    <script src="/js/jquery.min.js"></script>
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="/js/bootstrap.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
 
-    <!-- Plugin JavaScript -->
-    <script src="/js/jquery.easing.min.js"></script>
+<!-- Plugin JavaScript -->
+<script src="/js/jquery.easing.min.js"></script>
 
-    <!-- Custom Theme JavaScript -->
-    <script src="/js/grayscale.min.js"></script>
+<!-- Custom Theme JavaScript -->
+<script src="/js/grayscale.min.js"></script>
 
 </body>
 
